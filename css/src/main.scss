@@ -1,0 +1,246 @@
+
+
+// color variables
+$yellow: #F3C25B;
+$teal: #83BAB2;
+$green: #8B9E74;
+$red: #A61E2F;
+$grey: #414042;
+$terra: #D24A34;
+$tan: #EAD3B2;
+$eggshell: #F5F2E8;
+$brown: #6C421B;
+
+
+@import "reset";
+
+@import "fonts";
+
+@import "mixins";
+
+@import "base";
+
+@import "grid";
+
+
+body {
+	
+}
+
+
+// background-container
+.container {
+	@include font;
+	padding-bottom: 40px;
+
+	@include respond-to( 1220px ) {
+		padding-bottom: 20px;
+	}
+}
+
+
+// header styles
+header {
+	position: relative;
+	background: $eggshell url(../img/trees.png) top center no-repeat;
+	background-size: contain;
+	text-align: center;
+	padding-bottom: 30px;
+	border-bottom: 20px solid $red;
+	
+	@include respond-to( 768px ) {
+		border-bottom: 40px solid $red;
+	}
+
+	.header {
+
+	}
+
+	.leaves-left, .leaves-right {
+		position: absolute;
+		bottom: 0;
+		max-width: 20%;
+	}
+
+	.leaves-left {
+		left: 0;
+	}
+
+	.leaves-right {
+		right: 0;
+	}
+}
+
+
+// wrap div
+.wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	@include clearfix;
+}
+
+
+
+// padding div that'll resize for larger screens.
+.pad {
+	padding: 30px 20px;
+
+	@include respond-to( 768px ) { padding: 30px 50px; }
+	@include respond-to( 1025px ) { padding: 40px 70px; }
+}
+
+
+
+// tool styles
+.tool {
+	position: relative;
+	padding: 0;
+	
+	@include respond-to( 768px ) {
+		padding: 20px 40px;
+	}
+	
+	.intro {
+		padding: 15px 20px;
+
+		@include respond-to( 768px ) { padding: 20px 30px; }
+		@include respond-to( 1024px ) { padding: 20px 40px; }
+	}
+	
+	.content {
+		img {
+			display: block;
+		}
+
+		@include respond-to( 768px ) {
+			position: absolute;
+			bottom: 0;
+			right: 20px;
+		}
+	}
+
+	.calculator {
+		background: $red;
+		color: white;
+		padding: 20px 15px 30px;
+		margin: 30px 0 40px 0;
+		@include font-title;
+
+		@include respond-to( 768px ) { 
+			padding: 30px 20px 40px; 
+			width: 50%;
+		}
+
+		@include respond-to( 1024px ) {
+			padding: 40px;
+		}
+
+		button, input[type=submit], .btn {
+			width: 100%;
+			margin: 0 auto;
+			font-size: 1.2em;
+		}
+
+		input[type=image] {
+		 	position: absolute;
+		 	bottom: 0;
+		 	left: 100px;
+		}
+
+		.text-center {
+			height: 100px;
+		}
+	}
+
+	.half {
+		padding: 30px 10px;
+
+		@include respond-to( 1024px ) {
+			padding: 30px;
+		}
+	}
+}
+
+
+
+// results styles
+.results {
+	display: none;
+	text-align: center;
+	@extend .pad;
+
+	// large title
+	h2 {
+		@include font;
+		color: $red;
+		font-size: 1.8em;
+
+		@include respond-to( 768px ) {
+			font-size: 3em;
+			padding: 10px 20px;
+		}
+	}
+
+	h3 {
+		@include font;
+		font-size: 1.5em;
+
+		@include respond-to( 768px ) {
+			font-size: 2em;
+			padding: 10px 20px;
+		}
+	}
+
+	p {
+		@include font-title;
+		font-size: 1.5em;
+		line-height: 1.5em;
+
+		@include respond-to( 768px ) {
+			font-size: 2em;
+			padding: 50px 20px 10px;
+		}
+	}
+}
+
+
+
+// footer styles
+.footer-bar {
+	border-top: 10px solid $grey;
+	color: $grey;
+	padding: 30px 20px;
+	text-align: center;
+
+	h2 {
+		font-size: 2em;
+		color: $red;
+		@include respond-to( 768px ) { 
+			font-size: 2.5em;
+			padding-top: 30px;
+		}
+
+		span {
+			color: $red;
+		}
+	}
+}
+
+
+
+.fine-print {
+	@include font;
+	padding: 20px 0 0;
+	font-size: 12px;
+	line-height: 1.4em;
+	text-align: left;
+	color: $brown;
+	opacity: .7;
+
+	img {
+		float: right;
+		margin: 0 0 15px 15px;
+	}
+}
+
