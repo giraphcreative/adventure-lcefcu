@@ -172,7 +172,6 @@ header {
 
 	// large title
 	h2 {
-		@include font;
 		color: $red;
 		font-size: 1.8em;
 
@@ -183,7 +182,6 @@ header {
 	}
 
 	h3 {
-		@include font;
 		font-size: 1.5em;
 
 		@include respond-to( 768px ) {
@@ -193,12 +191,10 @@ header {
 	}
 
 	p {
-		@include font-title;
 		font-size: 1.5em;
 		line-height: 1.5em;
 
 		@include respond-to( 768px ) {
-			font-size: 2em;
 			padding: 50px 20px 10px;
 		}
 	}
